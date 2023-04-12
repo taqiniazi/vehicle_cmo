@@ -39,6 +39,8 @@ import { RunningVehiclesChartComponent } from './pages/dashboard/charts/running-
 import { AveragePetrolUsageChartComponent } from './pages/dashboard/charts/average-petrol-usage-chart/average-petrol-usage-chart.component';
 import { TotalVehiclesChartComponent } from './pages/dashboard/charts/total-vehicles-chart/total-vehicles-chart.component';
 import { InformationOfReceiptOfIssuedPetrolComponent } from './pages/information-of-receipt-of-issued-petrol/information-of-receipt-of-issued-petrol.component';
+import { SearchOfVehicleComponent } from './pages/search-of-vehicle/search-of-vehicle.component';
+import { ProductCategoryComponent } from './pages/product-category/product-category.component';
 
 defineCustomElements();
 registerLocaleData(localeEn, 'en-EN');
@@ -68,7 +70,9 @@ registerLocaleData(localeEn, 'en-EN');
         RunningVehiclesChartComponent,
         AveragePetrolUsageChartComponent,
         TotalVehiclesChartComponent,
-        InformationOfReceiptOfIssuedPetrolComponent
+        InformationOfReceiptOfIssuedPetrolComponent,
+        SearchOfVehicleComponent,
+        ProductCategoryComponent
     ],
     imports: [
         BrowserModule,

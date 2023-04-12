@@ -1,0 +1,106 @@
+<div class="content__boxed mt-0 p-lg-4 p-md-3">
+    <div class="content__wrap px-lg-2">
+       <div class="row">
+        <div class="col-xl-12 mb-3">
+            <div class="card h-100">
+                <div class="card-header py-3 border-bottom d-flex align-items-center">
+                    <div class="me-auto">
+                        <h3 class="h4 m-0 section_title">Information Of Product Category</h3>
+                    </div>
+                </div>
+                <!-- Network - Area Chart -->
+                <div class="card-body pt-5 pb-0">
+                    <div class="col-md-11 mb-3 mx-auto">
+                        <div class="row">
+                            <div class="col-md-4 mb-4 position-relative">
+                                <label for="" class="custom_label">Application Name</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Application Name" />
+                            </div>
+                            <div class="col-md-4 mb-4 position-relative">
+                                <label for="" class="custom_label">Product Category Code</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Product Category Code" />
+                            </div>
+                            <div class="col-md-4 mb-4 position-relative">
+                                <label for="" class="custom_label">Product Category Name</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Product Category Name" />
+                            </div>
+                            
+                            <div class="col-md-12 mb-4 position-relative">
+                                <label for="" class="custom_label">Description</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Type Here" />
+                            </div>
+                            <div class="col-md-12 mb-4 position-relative">
+                                <div class="form-check">
+                                    <label for="form-check">
+                                        <input type="checkbox" id="form-check" class="form-check-input" /> Active
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-md-12 text-right">
+                                <button class="btn btn-outline-light custom_btn ml-3">Cancel</button>
+                                <button class="btn btn-primary custom_btn ml-3"> Search </button>
+
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- END : Network - Area Chart -->
+
+            </div>
+        </div>
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-md-4 ml-auto text-right">
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                class="form-control rounded-pill"
+                                placeholder="Search..."
+                                [(ngModel)]="filterTerm"
+                            />
+                            </div>
+                    </div>
+                    <table id="example" class="table datatable w-100 table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Emp Code</th>
+                                <th>Category Code</th>
+                                <th>Category Name</th>
+                                <th>Description</th>
+                                <th>Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product_category of product_category  | filter: filterTerm">
+                                <td class="text-center">{{product_category.emp_code}}</td>
+                                
+                                <td>{{product_category.cat_code}}</td>
+                                <td>{{product_category.cat_name}}</td>
+                                <td>{{product_category.description}}</td>
+                                <td class="text-center">
+                                    <div class="dropdown table_last">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="bi bi-three-dots"></i>
+                                        </a>
+
+                                        <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuLink">
+                                            <li><a class="dropdown-item" href="#">{{product_category.update}}</a></li>
+                                            <li><a class="dropdown-item" href="#">{{product_category.delete}}</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+          
+    </div>
+ </div>

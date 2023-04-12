@@ -9,38 +9,57 @@
                     </div>
                 </div>
                 <!-- Network - Area Chart -->
-                <div class="card-body py-5 pb-3">
+                <div class="card-body pt-5">
                     <div class="col-md-11 mb-3 mx-auto">
                         <div class="row">
-                            .col-md-4.mb-4.position-relative*9>
                             <div class="col-md-4 mb-4 position-relative">
-                                <label for="" class="custom_label">Present Status</label>
-                                <select class="form-select form-select-lg">
-                                    <option value="">Select Status</option>
-                                    <option *ngFor="let emp_transfer_status of emp_transfer_status">{{emp_transfer_status}}</option>
-
-                                </select>
+                                <label for="" class="custom_label">Vendor</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Select Vendor Name" />
                             </div>
                             <div class="col-md-4 mb-4 position-relative">
-                                <label for="" class="custom_label">Sub Status</label>
-                                <select class="form-select form-select-lg">
-                                    <option value="">Select Status</option>
-                                    <option *ngFor="let emp_transfer_status of emp_transfer_status">{{emp_transfer_status}}</option>
-                                </select>
+                                <label for="" class="custom_label">Product Name</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Select Product  Name" />
                             </div>
                             <div class="col-md-4 mb-4 position-relative">
-                                <label for="" class="custom_label">Repatriation Date</label>
-                                <input type="date" class="form-control form-control-lg" />
+                                <label for="" class="custom_label">Bill Number</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Type Here" />
                             </div>
-                            <div class="col-md-12 mb-4 position-relative">
-                                <label for="" class="custom_label">Enter Remarks</label>
-                                <textarea class="form-control py-3" rows="8" placeholder="Enter Remarks"></textarea>
+                            <div class="col-md-4 mb-4 position-relative">
+                                <label for="" class="custom_label">Quantity </label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Type Here" />
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 text-end">
-                                <button class="btn btn-primary custom_btn me-3"> Update </button>
-                                <button class="btn btn-outline-light custom_btn">Cancel</button>
+                            <div class="col-md-4 mb-4 position-relative">
+                                <label for="" class="custom_label">Bill Date</label>
+                                <input type="date" class="form-control form-control-lg" placeholder="Type Here" />
+                            </div>
+                            <div class="col-md-4 mb-4 position-relative">
+                                <label for="" class="custom_label">Unit Price</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Type Here" />
+                            </div>
+                            <div class="col-md-4 mb-4 position-relative">
+                                <label for="" class="custom_label">Vehicle Name</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Type Here" />
+                            </div>
+                            <div class="col-md-4 mb-4 position-relative">
+                                <label for="" class="custom_label">Description</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Type Here" />
+                            </div>
+                            <div class="col-md-4 mb-4 position-relative">
+                                <label for="" class="custom_label">Remarks</label>
+                                <input type="text" class="form-control form-control-lg" placeholder="Type Here" />
+                            </div>
+                            
+                            <div class="col-md-12 mb-4">
+                                <div class="form-check px-3">
+                                    <input type="checkbox" class="form-check-input" id="active" />
+                                    <label class="form-check-label" for="Active">Active</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button class="btn btn-outline-light custom_btn ml-3">Cancel</button>
+                                <button class="btn btn-outline-light custom_btn ml-3">CUR POL</button>
+                                <button class="btn btn-outline-light custom_btn ml-3">PRE POL</button>
+                                <button class="btn btn-primary custom_btn ml-3"> Search </button>
 
                             </div>
                         </div>
@@ -54,35 +73,47 @@
           <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
+                    <div class="col-md-4 ml-auto text-right">
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                class="form-control rounded-pill"
+                                placeholder="Search..."
+                                [(ngModel)]="filterTerm"
+                            />
+                            </div>
+                    </div>
                     <table id="example" class="table datatable w-100 table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Emp <br> Code</th>
-                                <th>Picture</th>
-                                <th>Employee Name</th>
-                                <th>BPS</th>
-                                <th>Substantive Post</th>
-                                <th>Working Post</th>
-                                <th>Office</th>
-                                <th>Present Status</th>
-                                <th>Contact No.</th>
+                                <th>Vehicle <br> No</th>
+                                <th>Company <br> Name</th>
+                                <th>Product <br> Name </th>
+                                <th>Bill <br> No.</th>
+                                <th>Bill <br> Date</th>
+                                <th>Qty</th>
+                                <th>Unit</th>
+                                <th>Unit <br> Price</th>
+                                <th>Net Price</th>
+                                <th>Remarks</th>
                                 <th>Update</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let employe_information of employe_information">
+                            <tr *ngFor="let employe_information of employe_information  | filter: filterTerm">
                                 <td class="text-center">{{employe_information.emp_code}}</td>
-                                <td><img src="{{employe_information.emp_picture}}" class="img-fluid rounded-circle"
-                                        width="50" /></td>
-                                <td><a href="javascript:;" class="emp_name_tab">{{employe_information.emp_name}} </a></td>
-                                <td>{{employe_information.bps_scale}}</td>
-                                <td>{{employe_information.substantive_post}}</td>
-                                <td>{{employe_information.working_post}}</td>
-                                <td>{{employe_information.office}}</td>
-                                <td>{{employe_information.present_status}}</td>
+                                <td>{{employe_information.vehicle_no}}</td>
+                                <td>{{employe_information.company_name}} </td>
+                                <td>{{employe_information.product_name}}</td>
+                                <td>{{employe_information.bill_no}}</td>
+                                <td>{{employe_information.bill_date}}</td>
+                                <td>{{employe_information.qty}}</td>
+                                <td>{{employe_information.unit}}</td>
+                                <td>{{employe_information.unit_price}}</td>
+                                <td>{{employe_information.net_price}}</td>
                                 <td>
-                                    <span class="d-block">{{employe_information.contact_no}}</span>
-                                    <span class="d-block">{{employe_information.contact_no2}}</span>
+                                    {{employe_information.remarks}}
                                 </td>
                                 <td class="text-center">
                                     <div class="dropdown table_last">

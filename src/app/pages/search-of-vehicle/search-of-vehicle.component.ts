@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-information-of-receipt-of-issued-petrol',
-  templateUrl: './information-of-receipt-of-issued-petrol.component.html',
-  styleUrls: ['./information-of-receipt-of-issued-petrol.component.scss']
+  selector: 'app-search-of-vehicle',
+  templateUrl: './search-of-vehicle.component.html',
+  styleUrls: ['./search-of-vehicle.component.scss']
 })
-export class InformationOfReceiptOfIssuedPetrolComponent {
+export class SearchOfVehicleComponent {
   filterTerm!: string;
   employe_information:any = [
     { 

@@ -10,6 +10,8 @@ import {NonAuthGuard} from '@guards/non-auth.guard';
 import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.component';
 import {RecoverPasswordComponent} from '@modules/recover-password/recover-password.component';
 import { InformationOfReceiptOfIssuedPetrolComponent } from '@pages/information-of-receipt-of-issued-petrol/information-of-receipt-of-issued-petrol.component';
+import { SearchOfVehicleComponent } from '@pages/search-of-vehicle/search-of-vehicle.component';
+import { ProductCategoryComponent } from '@pages/product-category/product-category.component';
 
 const routes: Routes = [
     {
@@ -29,11 +31,11 @@ const routes: Routes = [
             },
             {
                 path: 'search_of_vehicle',
-                component: InformationOfReceiptOfIssuedPetrolComponent
+                component: SearchOfVehicleComponent
             },
             {
                 path: 'product_category',
-                component: InformationOfReceiptOfIssuedPetrolComponent
+                component: ProductCategoryComponent
             }
         ]
     },
