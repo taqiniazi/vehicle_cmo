@@ -1,0 +1,166 @@
+<!-- /.content-header -->
+
+<section class="content">
+    <div class="container-fluid px-lg-4">
+        <!-- Small boxes (Stat box) -->
+        <div class="row"><div class="col-md-12 title_dash mb-5 pt-4">Welcome!</div></div>
+        <div class="row">
+            <div class="col-md-4 mb-3  d-flex d-flex-strech pr-4">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="card_title">Vehicle Performance</div>
+                        <small class="sub_card_title">See how Vehicle is performing</small>
+                        <app-vehicle-performance-chart></app-vehicle-performance-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 d-flex d-flex-strech pr-4">
+                <div class="card w-100 border-0">
+                    <div class="card-body">
+                        <div class="card_title">Vehicle Health</div>
+                        <small class="sub_card_title">Check your Vehicle health score</small>
+                        <app-vehicle-health-chart></app-vehicle-health-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 d-flex d-flex-strech pl-2">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="card_title">Running Vehicles</div>
+                        <small class="sub_card_title">Percentage of Vehicles Running</small>
+                        <app-running-vehicles-chart></app-running-vehicles-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mb-3 d-flex d-flex-streach pr-lg-4">
+                <div class="card w-100 ">
+                    <div class="card-body">
+                        <div class="card_title">Vehicle Performance</div>
+                        <small class="sub_card_title">See how Vehicle is performing</small>
+                        <app-average-petrol-usage-chart></app-average-petrol-usage-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 d-flex d-flex-streach">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="card_title">Total Vehicle</div>
+                        <small class="sub_card_title">See how Vehicle is performing</small>
+                        <app-total-vehicles-chart></app-total-vehicles-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-xl-12 mb-3">
+                <div class="card h-100">
+                    <div class="card-header border-bottom d-flex align-items-center">
+                        <div class="me-auto">
+                            <h3 class="h4 m-0 section_title">Search Employee Information</h3>
+                        </div>
+                        <div class="ml-auto">
+                            <button class="btn btn-primary custom_btn" data-bs-toggle="modal"
+                                data-bs-target="#add_employee">Add</button>
+                        </div>
+                    </div>
+                    <div class="card-body pt-5 pb-3">
+                        <div class="col-md-9 mx-auto">
+                            <div class="row">
+                                <div class="col-md-4 mb-4 position-relative">
+                                    <label for="" class="custom_label">Employee Name</label>
+                                    <input type="text" class="form-control form-control-lg" />
+                                </div>
+                                <div class="col-md-4 mb-4 position-relative">
+                                    <label for="" class="custom_label">Employee Code</label>
+                                    <input type="text" class="form-control form-control-lg" />
+                                </div>
+                                <div class="col-md-4 mb-4 position-relative">
+                                    <label for="" class="custom_label">PIFRA</label>
+                                    <input type="text" class="form-control form-control-lg" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mt-3 text-right">
+                                    <button class="btn btn-outline-light custom_btn mr-3">Cancel</button>
+                                    <button class="btn btn-primary custom_btn"> Search </button>
+
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-12">
+  
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="col-md-4 ml-auto text-right">
+                            <div class="form-group">
+                                <input
+                                  type="text"
+                                  class="form-control rounded-pill"
+                                  placeholder="Search..."
+                                  [(ngModel)]="filterTerm"
+                                />
+                              </div>
+                        </div>
+                        <table id="example" class="table datatable w-100 table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Emp <br> Code</th>
+                                    <th>Picture</th>
+                                    <th>Employee Name</th>
+                                    <th>BPS</th>
+                                    <th>Substantive Post</th>
+                                    <th>Working Post</th>
+                                    <th>Office</th>
+                                    <th>Present Status</th>
+                                    <th>Contact No.</th>
+                                    <th>Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let employe_information of employe_information |  filter: filterTerm">
+                                    <td class="text-center">{{employe_information.emp_code}}</td>
+                                    <td><img src="{{employe_information.emp_picture}}" class="img-fluid rounded-circle"
+                                            width="50" /></td>
+                                    <td><a href="javascript:;" class="emp_name_tab">{{employe_information.emp_name}} </a></td>
+                                    <td>{{employe_information.bps_scale}}</td>
+                                    <td>{{employe_information.substantive_post}}</td>
+                                    <td>{{employe_information.working_post}}</td>
+                                    <td>{{employe_information.office}}</td>
+                                    <td>{{employe_information.present_status}}</td>
+                                    <td>
+                                        <span class="d-block">{{employe_information.contact_no}}</span>
+                                        <span class="d-block">{{employe_information.contact_no2}}</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="dropdown table_last">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots"></i>
+                                            </a>
+
+                                            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuLink">
+                                                <li><a class="dropdown-item" href="#">{{employe_information.update}}</a></li>
+                                                <li><a class="dropdown-item" href="#">{{employe_information.delete}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- /.row -->
+    </div>
+    <!-- Main row -->
+</section>
+<!-- /.content -->

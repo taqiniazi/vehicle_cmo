@@ -1,0 +1,36 @@
+<!-- Brand Logo -->
+<a [routerLink]="['/']" class="brand-link d-block">
+    <pf-image
+        src="assets/img/logo.png"
+        alt="CMO HRIS"
+        class="img-fluid my-class"
+        width="230"
+        style="width: 100%;"
+    ></pf-image>
+</a>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <!-- Sidebar user (optional) -->
+    <div class="user-panel w-100 text-center mb-2 d-flex">
+        <div class="image mx-auto">
+            <img class="img-md rounded-circle sidebar_profile_pic" src="assets/img/profile-photos/1.png" alt="Profile Picture" />
+        </div>        
+    </div>
+    <div class="username w-100 text-center mb-3 font-weight-bold">Taqi Raza Khan</div>
+    
+    <!-- Sidebar Menu -->
+    <nav class="mt-2" style="overflow-y: hidden">
+        <ul
+            class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false"
+        >
+            <app-menu-item
+                *ngFor="let item of menu"
+                [menuItem]="item"
+            ></app-menu-item>
+        </ul>
+    </nav>
+</div>
