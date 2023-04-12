@@ -1,1 +1,2 @@
-# vehicle_cmo
+# Vehicle Inventory Management System
+CMO ERP
